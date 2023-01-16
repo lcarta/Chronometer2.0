@@ -7,52 +7,42 @@ body {
   margin: 0;
   padding: 0;
   font-size: 1rem;
-  overflow-x: hidden;
-}
-
-html h1,
-body h1 {
-  margin: 0;
-  color: aliceblue;
-}
-
-.header {
-  flex-direction: column;
-  justify-content: center;
-  height: 10%;
-  text-align: center;
-  padding-bottom: 50px;
-}
-
-.btn {
-  width: auto;
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-
-.chronoContainer {
-  justify-content: center;
-  text-align: center;
-  padding: 0.5rem;
-  background-color: #4b4b4b;
-  margin: 1rem auto;
-  width: 18rem;
-}
-
-.timeContainer {
-  justify-content: center;
-  text-align: center;
-  margin: 5% 15%;
-  background-color: #a8dadc;
-
-
-}
-
-#times {
-  font-family: fantasy;
-  justify-content: center;
-  text-align: center;
-  margin: 1% 5%;
-  color: #495057;
-  width: fit-content;
-}
+  overflow-x: hidden; }
+  html h1,
+  body h1 {
+    margin: 0;
+    color: aliceblue; }
+  html .header,
+  body .header {
+    flex-direction: column;
+    justify-content: center;
+    height: 10%;
+    text-align: center;
+    padding-bottom: 50px; }
+  html .btn,
+  body .btn {
+    width: auto;
+    padding-top: 2px;
+    padding-bottom: 2px; }
+  html .chronoContainer,
+  body .chronoContainer {
+    justify-content: center;
+    text-align: center;
+    padding: 0.5rem;
+    background-color: #4b4b4b;
+    margin: 1rem auto;
+    width: 18rem; }
+  html .timeContainer,
+  body .timeContainer {
+    justify-content: center;
+    text-align: center;
+    margin: 5% 15%;
+    background-color: #a8dadc; }
+  html #times,
+  body #times {
+    font-family: fantasy;
+    justify-content: center;
+    text-align: center;
+    margin: 1% 5%;
+    color: #495057;
+    width: fit-content; }
