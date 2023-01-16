@@ -27,7 +27,7 @@ const start = () => {
   if (ms < 99) {
     ms += 1;
     timeSplit[3] = checkTime(ms);
-    document.querySelector('#times').innerHTML = timeSplit.join(':');
+    times.innerHTML = timeSplit.join(':');
   } else {
     ms = 0;
     timeSplit[3] = checkTime(ms);
