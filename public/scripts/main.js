@@ -13,7 +13,6 @@ let clicked;
 const startChrono = () => {
   if (clicked == true) {
     setTimer = setInterval(start, 10);
-    console.log({ startButton })
     startButton.disabled = true;
     stopButton.disabled = false;
     resetButton.disabled = false;
