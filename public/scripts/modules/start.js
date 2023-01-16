@@ -1,50 +1,41 @@
-import { checkTime } from "./checkTime.js";
+import { timesDigit } from "./timesDigit.js";
 //import { reset } from "./main.js";
-
 
 const times = document.querySelector('#times');
 let timeSplit = times.innerText.split(':')
-let ms = 0;
-let s = 0;
-let m = 0;
-let h = 0;
-console.log(ms, s, m, h)
-
-
 
 const reset = () => {
   times.innerHTML = '00:00:00:00';
   timeSplit = times.innerText.split(':');
-  ms = 0;
-  s = 0;
-  m = 0;
-  h = 0;
-  console.log(h, m, s, ms)
+  timesDigit.milliseconds = 0;
+  timesDigit.seconds = 0;
+  timesDigit.minute = 0;
+  timesDigit.hours = 0;
 }
 //const setMs=(value)=>{ms=value}
 
 const start = () => {
-  if (ms < 99) {
-    ms += 1;
-    timeSplit[3] = checkTime(ms);
+  if (timesDigit.milliseconds < 99) {
+    timesDigit.milliseconds += 1;
+    timeSplit[3] = String((timesDigit.milliseconds)).padStart(2, '0');
     times.innerHTML = timeSplit.join(':');
   } else {
-    ms = 0;
-    timeSplit[3] = checkTime(ms);
-    if (s < 59) {
-      s += 1;
-      timeSplit[2] = checkTime(s);
+    timesDigit.milliseconds = 0;
+    timeSplit[3] = String((timesDigit.milliseconds)).padStart(2, '0');
+    if (timesDigit.seconds < 59) {
+      timesDigit.seconds += 1;
+      timeSplit[2] = String((timesDigit.seconds)).padStart(2, '0');
     } else {
-      s = 0;
-      timeSplit[2] = checkTime(s);
-      if (m < 59) {
-        m += 1;
-        timeSplit[1] = checkTime(m);
-      } else if (h < 59) {
-        m = 0;
-        timeSplit[1] = checkTime(m);
-        h += 1;
-        timeSplit[0] = checkTime(h);
+      timesDigit.seconds = 0;
+      timeSplit[2] = String((timesDigit.seconds)).padStart(2, '0');
+      if (timesDigit.minute < 59) {
+        timesDigit.minute += 1;
+        timeSplit[1] = String((timesDigit.minute)).padStart(2, '0');
+      } else if (timesDigit.hours < 59) {
+        timesDigit.minute = 0;
+        timeSplit[1] = String((timesDigit.minute)).padStart(2, '0');
+        timesDigit.hours += 1;
+        timeSplit[0] = String((timesDigit.hours)).padStart(2, '0');
       }
 
     }
@@ -53,4 +44,4 @@ const start = () => {
 }
 
 
-export { start, ms, s, m, h, reset }
+export { start, reset }
