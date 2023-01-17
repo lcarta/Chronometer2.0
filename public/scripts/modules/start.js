@@ -1,33 +1,21 @@
 import { timesDigit } from "./timesDigit.js";
-//import { reset } from "./main.js";
 
 const times = document.querySelector('#times');
-let timeSplit = times.innerText.split(':')
-
-const reset = () => {
-  times.innerHTML = '00:00:00:00';
-  timeSplit = times.innerText.split(':');
-  timesDigit.milliseconds = 0;
-  timesDigit.seconds = 0;
-  timesDigit.minute = 0;
-  timesDigit.hours = 0;
-}
-//const setMs=(value)=>{ms=value}
+let timeSplit = times.innerText.split(':');
+let frame;
 
 const start = () => {
   timesDigit.milliseconds += 1;
-  let timesDigitSeconds = parseInt(timesDigit.milliseconds / 100);
-  let timesDigitMinute = parseInt(timesDigit.milliseconds / 6000);
-  let timesDigitHour = parseInt(timesDigit.milliseconds / 360000);
-
-  timeSplit[3] = String(((timesDigit.milliseconds) % 99)).padStart(2, '0');
+  let timesDigitMilliseconds = parseInt(timesDigit.milliseconds * 100 / 60);
+  let timesDigitSeconds = parseInt(timesDigit.milliseconds / 60);
+  let timesDigitMinute = parseInt(timesDigit.milliseconds / 3600);
+  let timesDigitHour = parseInt(timesDigit.milliseconds / 216000);
+  timeSplit[3] = String(((timesDigitMilliseconds) % 99)).padStart(2, '0');
   timeSplit[2] = String(((timesDigitSeconds) % 60)).padStart(2, '0');
   timeSplit[1] = String(((timesDigitMinute) % 60)).padStart(2, '0');
   timeSplit[0] = String(((timesDigitHour) % 99)).padStart(2, '0');
-
   times.innerHTML = timeSplit.join(':');
-
+  frame = requestAnimationFrame(start);
 }
 
-
-export { start, reset }
+export { start, frame }
