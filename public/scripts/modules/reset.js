@@ -1,11 +1,11 @@
 import { timesDigit } from "./timesDigit.js";
+import { frame } from "./start.js";
 
 const times = document.querySelector('#times');
-let timeSplit = times.innerText.split(':');
 
 const reset = () => {
+  cancelAnimationFrame(frame);
   times.innerHTML = '00:00:00:00';
-  timeSplit = times.innerText.split(':');
   timesDigit.milliseconds = 0;
   timesDigit.seconds = 0;
   timesDigit.minute = 0;
