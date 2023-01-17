@@ -1,3 +1,6 @@
+@import "./variables/variables.scss";
+@import "./components/components.scss";
+
 html,
 body {
   width: 100vw;
@@ -6,8 +9,50 @@ body {
   padding: 0;
   font-size: 1rem;
   overflow-x: hidden;
+  background-color: $background-color;
 
   h1 {
     margin: 0;
+  }
+
+  .buttonsContainer {
+    display: flex;
+    gap: 16px;
+  }
+}
+
+.btn-red {
+  background-color: $color-red;
+  color: white;
+  transition: 0.3s ease all;
+
+  &:hover {
+    background-color: transparent;
+    border-color: $color-red;
+    color: $color-red;
+  }
+}
+
+.btn-green {
+  background-color: $color-green;
+  color: white;
+  transition: 0.3s ease all;
+
+  &:hover {
+    background-color: transparent;
+    border-color: $color-green;
+    color: $color-green;
+  }
+}
+
+.btn-blue {
+  background-color: $color-blue;
+  color: white;
+  transition: 0.3s ease all;
+
+  &:hover {
+    background-color: transparent;
+    border-color: $color-blue;
+    color: $color-blue;
   }
 }

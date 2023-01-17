@@ -1,0 +1,9 @@
+.btn {
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding-left: 18px;
+  padding-right: 18px;
+  border: 2px solid white; }
