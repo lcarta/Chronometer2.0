@@ -36,7 +36,6 @@ const start = () => {
         timeSplit[1] = String((timesDigit.minute)).padStart(2, '0');
         timesDigit.hours += 1;
         timeSplit[0] = String((timesDigit.hours)).padStart(2, '0');
-
       }
 
     }
