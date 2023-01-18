@@ -16,8 +16,10 @@ const startChrono = () => {
 
 const stopChrono = () => {
   cancelAnimationFrame(frame);
+  startButton.removeAttribute('btn-hover');
   startButton.disabled = false;
   stopButton.disabled = true;
+  stopButton.removeAttribute('btn-hover');
 }
 
 const resetChrono = () => {
