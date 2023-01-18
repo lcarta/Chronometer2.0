@@ -14,7 +14,7 @@ const start = () => {
   timeSplit[2] = String(((timesDigitSeconds) % 60)).padStart(2, '0');
   timeSplit[1] = String(((timesDigitMinute) % 60)).padStart(2, '0');
   timeSplit[0] = String(((timesDigitHour) % 99)).padStart(2, '0');
-  times.innerHTML = timeSplit.join(':');
+  times.innerHTML = `${timeSplit[0]}:${timeSplit[1]}.${timeSplit[2]},${timeSplit[3]}`;
   frame = requestAnimationFrame(start);
 }
 

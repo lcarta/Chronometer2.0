@@ -1,7 +1,9 @@
+@import './components/components.scss';
+@import './variables/variables.scss';
+
 html,
 body {
-  justify-content: center;
-  background-color: #364f6b;
+  background-color: $dark-background-color;
   width: 100vw;
   height: 100vh;
   margin: 0;
@@ -11,45 +13,28 @@ body {
 
   h1 {
     margin: 0;
-    color: aliceblue;
-  }
-
-  .header {
-    flex-direction: column;
-    justify-content: center;
-    height: 10%;
-    text-align: center;
-    padding-bottom: 50px;
-  }
-
-  .btn {
-    width: auto;
-    padding-top: 2px;
-    padding-bottom: 2px;
-  }
-
-  .chronoContainer {
-    justify-content: center;
-    text-align: center;
-    padding: 0.5rem;
-    background-color: #4b4b4b;
-    margin: 1rem auto;
-    width: 18rem;
+    color: #f1faee;
   }
 
   .timeContainer {
-    justify-content: center;
-    text-align: center;
-    margin: 5% 15%;
-    background-color: #a8dadc;
+    border-radius: 5px;
+    align-content: center;
+    background-color: $dark-color-blue;
   }
 
-  #times {
-    font-family: fantasy;
-    justify-content: center;
-    text-align: center;
-    margin: 1% 5%;
-    color: #495057;
-    width: fit-content;
+  .buttonContainer {
+    padding-top: 20px;
   }
+}
+
+.btn-start:hover {
+  background-color: $color-green;
+}
+
+.btn-stop:hover {
+  background-color: $color-yellow;
+}
+
+.btn-reset:hover {
+  background-color: $color-red;
 }
